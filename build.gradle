@@ -1,42 +1,12 @@
-plugins {
-	id 'org.springframework.boot'
-	id 'io.spring.dependency-management'
-	id 'java'
-}
-
-group = 'com.inwaiders.plames'
-version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '1.8'
+apply plugin: 'java-library'
 
 repositories {
-	mavenCentral()
-	jcenter()
-}
 
-bootJar {
-
-   enabled = false
-}
-
-jar{
-
-	enabled = true
-    baseName = 'market-api' 
-    version = '1.0'
+    jcenter()
 }
 
 dependencies {
 
-	implementation 'org.springframework.boot:spring-boot-starter'
-	testImplementation('org.springframework.boot:spring-boot-starter-test') {
-		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
-	}
-	
 	compile project(':Plames-API')
-    compile project(':Plames-Core')
 	compile project(':Plames-Wallet-API')
-}
-
-test {
-	useJUnitPlatform()
 }
